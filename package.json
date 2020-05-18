@@ -1,0 +1,25 @@
+{
+  "name": "openfuel-feed-parser",
+  "version": "1.0.0",
+  "description": "Parses emails from varioud newsletters",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "start": "npm run build",
+    "example": "tsc ./examples/sample.ts && node ./examples/sample.js"
+  },
+  "keywords": [
+    "nodejs",
+    "typescript"
+  ],
+  "author": "Divy Srivastava <dj.srivastava23@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "tslint": "^5.19.0",
+    "typescript": "^3.6.0"
+  },
+  "main": "dist/index.js",
+  "repository": "https://github.com/openfuel/openfuel-feed-parser",
+  "private": false
+}
