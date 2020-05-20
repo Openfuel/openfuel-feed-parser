@@ -1,11 +1,9 @@
 // main.ts
-// const fs = require('fs');
 import * as fs from "fs";
 
-//const readline = require('readline');
 import * as readline from "readline";
 
-import Parse from './parser';
+import Parse from "./parser";
 
 import { google } from "googleapis";
 
@@ -17,8 +15,7 @@ const SCOPES: string[] = ["https://www.googleapis.com/auth/gmail.readonly"];
 const TOKEN_PATH: string = "token.json";
 
 // Load client secrets from a local file.
-//var creds = require("./credentials.json");
-import * as creds from "./credentials.json"
+import * as creds from "./credentials.json";
 authorize(creds, getRecentEmail);
 
 /**
@@ -108,7 +105,7 @@ function getRecentEmail(auth: any) {
   const gmail = google.gmail({ version: "v1", auth });
   // Only get the recent email - 'maxResults' parameter
   gmail.users.messages.list(
-    { auth: auth, userId: "me", labelIds: ['CATEGORY_FORUMS'], maxResults: 4 },
+    { auth: auth, userId: "me", labelIds: ["CATEGORY_FORUMS"], maxResults: 4 },
     function (err: any, response: any) {
       if (err) {
         console.log("The API returned an error: " + err);
@@ -131,7 +128,10 @@ function getRecentEmail(auth: any) {
           response["data"]["payload"]["headers"].forEach((a: any, b: any) => {
             if (a["name"] == "From") {
               // parts[0] contains text/plain data and parts[1] contains text/html data
-              Parse(regex.exec(a["value"])[2], response.data.payload.parts[1].body.data)
+              Parse(
+                regex.exec(a["value"])[2],
+                response.data.payload.parts[1].body.data
+              );
             }
           });
         }
