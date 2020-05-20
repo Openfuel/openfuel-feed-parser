@@ -7,7 +7,6 @@ import * as readline from "readline";
 
 import Parse from './parser';
 
-//const {google} = require('googleapis');
 import { google } from "googleapis";
 
 // If modifying these scopes, delete token.json.
@@ -131,17 +130,8 @@ function getRecentEmail(auth: any) {
           // console.log(response["data"]["payload"]["headers"]);
           response["data"]["payload"]["headers"].forEach((a: any, b: any) => {
             if (a["name"] == "From") {
-              Parse(regex.exec(a["value"])[2], response.data.payload.parts[0].body.data)
-              /**
-              if (
-                regex.exec(a["value"])[2] == "someone@gmail.com"
-              ) {
-                var message_raw = response.data.payload.parts[0].body.data;
-                var data = message_raw;
-                var buff = new Buffer(data, "base64");
-                var text = buff.toString();
-                console.log(text);
-              } **/
+              // parts[0] contains text/plain data and parts[1] contains text/html data
+              Parse(regex.exec(a["value"])[2], response.data.payload.parts[1].body.data)
             }
           });
         }
