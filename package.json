@@ -6,7 +6,7 @@
     "build": "tsc",
     "watch": "tsc -w",
     "lint": "tslint -c tslint.json -p tsconfig.json",
-    "start": "npm run build",
+    "start": "yarn build && node ./dist/main.js",
     "example": "tsc ./examples/sample.ts && node ./examples/sample.js"
   },
   "keywords": [
