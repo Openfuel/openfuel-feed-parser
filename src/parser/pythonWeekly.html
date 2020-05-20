@@ -1,0 +1,546 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Python vs JavaScript, Python Dev Survey 2019 Results, CPython 3.8.3 Released, and More</title>
+      <style type="text/css">
+         body,#bodyTable,#bodyCell{
+         height:100% !important;
+         margin:0;
+         padding:0;
+         width:100% !important;
+         }
+         table{
+         border-collapse:collapse;
+         }
+         img,a img{
+         border:0;
+         outline:none;
+         text-decoration:none;
+         }
+         h1,h2,h3,h4,h5,h6{
+         margin:0;
+         padding:0;
+         }
+         p{
+         margin:1em 0;
+         padding:0;
+         }
+         a{
+         word-wrap:break-word;
+         }
+         .mcnPreviewText{
+         display:none !important;
+         }
+         .ReadMsgBody{
+         width:100%;
+         }
+         .ExternalClass{
+         width:100%;
+         }
+         .ExternalClass,.ExternalClass p,.ExternalClass span,.ExternalClass font,.ExternalClass td,.ExternalClass div{
+         line-height:100%;
+         }
+         table,td{
+         mso-table-lspace:0pt;
+         mso-table-rspace:0pt;
+         }
+         #outlook a{
+         padding:0;
+         }
+         img{
+         -ms-interpolation-mode:bicubic;
+         }
+         body,table,td,p,a,li,blockquote{
+         -ms-text-size-adjust:100%;
+         -webkit-text-size-adjust:100%;
+         }
+         #bodyCell{
+         padding:0;
+         }
+         .mcnImage,.mcnRetinaImage{
+         vertical-align:bottom;
+         }
+         .mcnTextContent img{
+         height:auto !important;
+         }
+         body,#bodyTable{
+         background-color:#F2F2F2;
+         }
+         #bodyCell{
+         border-top:0;
+         }
+         h1{
+         color:#555 !important;
+         display:block;
+         font-size:40px;
+         font-style:normal;
+         font-weight:bold;
+         line-height:125%;
+         letter-spacing:-1px;
+         margin:0;
+         text-align:left;
+         }
+         h2{
+         color:#404040 !important;
+         display:block;
+         font-size:26px;
+         font-style:normal;
+         font-weight:bold;
+         line-height:125%;
+         letter-spacing:-.75px;
+         margin:0;
+         text-align:left;
+         }
+         h3{
+         color:#555 !important;
+         display:block;
+         font-size:18px;
+         font-style:normal;
+         font-weight:bold;
+         line-height:125%;
+         letter-spacing:-.5px;
+         margin:0;
+         text-align:left;
+         }
+         h4{
+         color:#808080 !important;
+         display:block;
+         font-size:16px;
+         font-style:normal;
+         font-weight:bold;
+         line-height:125%;
+         letter-spacing:normal;
+         margin:0;
+         text-align:left;
+         }
+         #templatePreheader{
+         background-color:#3399cc;
+         border-top:0;
+         border-bottom:0;
+         }
+         .preheaderContainer .mcnTextContent,.preheaderContainer .mcnTextContent p{
+         color:#ffffff;
+         font-size:11px;
+         line-height:125%;
+         text-align:left;
+         }
+         .preheaderContainer .mcnTextContent a{
+         color:#ffffff;
+         font-weight:normal;
+         text-decoration:underline;
+         }
+         #templateHeader{
+         background-color:#FFFFFF;
+         border-top:0;
+         border-bottom:0;
+         }
+         .headerContainer .mcnTextContent,.headerContainer .mcnTextContent p{
+         color:#555;
+         font-size:15px;
+         line-height:150%;
+         text-align:left;
+         }
+         .headerContainer .mcnTextContent a{
+         color:#6DC6DD;
+         font-weight:normal;
+         text-decoration:underline;
+         }
+         #templateBody{
+         background-color:#FFFFFF;
+         border-top:0;
+         border-bottom:0;
+         }
+         .bodyContainer .mcnTextContent,.bodyContainer .mcnTextContent p{
+         color:#555;
+         font-size:16px;
+         line-height:150%;
+         text-align:left;
+         margin: 0 0 1em 0;
+         }
+         .bodyContainer .mcnTextContent a{
+         color:#6DC6DD;
+         font-weight:normal;
+         text-decoration:underline;
+         }
+         #templateFooter{
+         background-color:#F2F2F2;
+         border-top:0;
+         border-bottom:0;
+         }
+         .footerContainer .mcnTextContent,.footerContainer .mcnTextContent p{
+         color:#555;
+         font-size:11px;
+         line-height:125%;
+         text-align:left;
+         }
+         .footerContainer .mcnTextContent a{
+         color:#555;
+         font-weight:normal;
+         text-decoration:underline;
+         }
+         @media only screen and (max-width: 600px){
+         body,table,td,p,a,li,blockquote{
+         -webkit-text-size-adjust:none !important;
+         }
+         }   @media only screen and (max-width: 600px){
+         body{
+         width:100% !important;
+         min-width:100% !important;
+         }
+         }   @media only screen and (max-width: 600px){
+         .mcnRetinaImage{
+         max-width:100% !important;
+         }
+         }   @media only screen and (max-width: 600px){
+         table[class=mcnTextContentContainer]{
+         width:100% !important;
+         }
+         }   @media only screen and (max-width: 600px){
+         .mcnBoxedTextContentContainer{
+         max-width:100% !important;
+         min-width:100% !important;
+         width:100% !important;
+         }
+         }   @media only screen and (max-width: 600px){
+         table[class=mcpreview-image-uploader]{
+         width:100% !important;
+         display:none !important;
+         }
+         }   @media only screen and (max-width: 600px){
+         img[class=mcnImage]{
+         width:100% !important;
+         }
+         }   @media only screen and (max-width: 600px){
+         table[class=mcnImageGroupContentContainer]{
+         width:100% !important;
+         }
+         }   @media only screen and (max-width: 600px){
+         td[class=mcnImageGroupContent]{
+         padding:9px !important;
+         }
+         }   @media only screen and (max-width: 600px){
+         td[class=mcnImageGroupBlockInner]{
+         padding-bottom:0 !important;
+         padding-top:0 !important;
+         }
+         }   @media only screen and (max-width: 600px){
+         tbody[class=mcnImageGroupBlockOuter]{
+         padding-bottom:9px !important;
+         padding-top:9px !important;
+         }
+         }   @media only screen and (max-width: 600px){
+         table[class=mcnCaptionTopContent],table[class=mcnCaptionBottomContent]{
+         width:100% !important;
+         }
+         }   @media only screen and (max-width: 600px){
+         table[class=mcnCaptionLeftTextContentContainer],table[class=mcnCaptionRightTextContentContainer],table[class=mcnCaptionLeftImageContentContainer],table[class=mcnCaptionRightImageContentContainer],table[class=mcnImageCardLeftTextContentContainer],table[class=mcnImageCardRightTextContentContainer],.mcnImageCardLeftImageContentContainer,.mcnImageCardRightImageContentContainer{
+         width:100% !important;
+         }
+         }   @media only screen and (max-width: 600px){
+         td[class=mcnImageCardLeftImageContent],td[class=mcnImageCardRightImageContent]{
+         padding-right:18px !important;
+         padding-left:18px !important;
+         padding-bottom:0 !important;
+         }
+         }   @media only screen and (max-width: 600px){
+         td[class=mcnImageCardBottomImageContent]{
+         padding-bottom:9px !important;
+         }
+         }   @media only screen and (max-width: 600px){
+         td[class=mcnImageCardTopImageContent]{
+         padding-top:18px !important;
+         }
+         }   @media only screen and (max-width: 600px){
+         td[class=mcnImageCardLeftImageContent],td[class=mcnImageCardRightImageContent]{
+         padding-right:18px !important;
+         padding-left:18px !important;
+         padding-bottom:0 !important;
+         }
+         }   @media only screen and (max-width: 600px){
+         td[class=mcnImageCardBottomImageContent]{
+         padding-bottom:9px !important;
+         }
+         }   @media only screen and (max-width: 600px){
+         td[class=mcnImageCardTopImageContent]{
+         padding-top:18px !important;
+         }
+         }   @media only screen and (max-width: 600px){
+         table[class=mcnCaptionLeftContentOuter] td[class=mcnTextContent],table[class=mcnCaptionRightContentOuter] td[class=mcnTextContent]{
+         padding-top:9px !important;
+         }
+         }   @media only screen and (max-width: 600px){
+         td[class=mcnCaptionBlockInner] table[class=mcnCaptionTopContent]:last-child td[class=mcnTextContent],.mcnImageCardTopImageContent,.mcnCaptionBottomContent:last-child .mcnCaptionBottomImageContent{
+         padding-top:18px !important;
+         }
+         }   @media only screen and (max-width: 600px){
+         td[class=mcnBoxedTextContentColumn]{
+         padding-left:18px !important;
+         padding-right:18px !important;
+         }
+         }   @media only screen and (max-width: 600px){
+         td[class=mcnTextContent]{
+         padding-right:18px !important;
+         padding-left:18px !important;
+         }
+         }   @media only screen and (max-width: 600px){
+         table[class=templateContainer]{
+         max-width:600px !important;
+         width:100% !important;
+         }
+         }   @media only screen and (max-width: 600px){
+         h1{
+         font-size:24px !important;
+         line-height:125% !important;
+         }
+         }   @media only screen and (max-width: 600px){
+         h2{
+         font-size:20px !important;
+         line-height:125% !important;
+         }
+         }   @media only screen and (max-width: 600px){
+         h3{
+         font-size:18px !important;
+         line-height:125% !important;
+         }
+         }   @media only screen and (max-width: 600px){
+         h4{
+         font-size:16px !important;
+         line-height:125% !important;
+         }
+         }   @media only screen and (max-width: 600px){
+         table[class=mcnBoxedTextContentContainer] td[class=mcnTextContent],td[class=mcnBoxedTextContentContainer] td[class=mcnTextContent] p{
+         font-size:18px !important;
+         line-height:125% !important;
+         }
+         }   @media only screen and (max-width: 600px){
+         table[id=templatePreheader]{
+         display:block !important;
+         }
+         }   @media only screen and (max-width: 600px){
+         td[class=preheaderContainer] td[class=mcnTextContent],td[class=preheaderContainer] td[class=mcnTextContent] p{
+         font-size:14px !important;
+         line-height:115% !important;
+         }
+         }   @media only screen and (max-width: 600px){
+         td[class=headerContainer] td[class=mcnTextContent],td[class=headerContainer] td[class=mcnTextContent] p{
+         font-size:18px !important;
+         line-height:125% !important;
+         }
+         }   @media only screen and (max-width: 600px){
+         td[class=bodyContainer] td[class=mcnTextContent],td[class=bodyContainer] td[class=mcnTextContent] p{
+         font-size:18px !important;
+         line-height:125% !important;
+         }
+         }   @media only screen and (max-width: 600px){
+         td[class=footerContainer] td[class=mcnTextContent],td[class=footerContainer] td[class=mcnTextContent] p{
+         font-size:14px !important;
+         line-height:115% !important;
+         }
+         }   @media only screen and (max-width: 600px){
+         td[class=footerContainer] a[class=utilityLink]{
+         display:block !important;
+         }
+         }
+      </style>
+   </head>
+   <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="margin: 0;padding: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #F2F2F2;height: 100% !important;width: 100% !important;">
+      <div itemscope itemtype="http://schema.org/EmailMessage">
+         <div itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop="name" content="PyCoder's Weekly">
+            <link itemprop="url" content="https://pycoders.com">
+         </div>
+         <div itemprop="about" itemscope itemtype="http://schema.org/Offer">
+            <link itemprop="image" href="https://cdn.pycoders.com/37bdf31dc645f968ffb90196e5d38ff5">
+         </div>
+      </div>
+      <!--[if !gte mso 9]><!----><span class="mcnPreviewText" style="display:none; font-size:0px; line-height:0px; max-height:0px; max-width:0px; opacity:0; overflow:hidden; visibility:hidden; mso-hide:all;">Python vs JavaScript for Pythonistas </span><!--<![endif]-->
+      <center>
+         <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin: 0;padding: 0;background-color: #F2F2F2;height: 100% !important;width: 100% !important;">
+            <tr>
+               <td align="center" valign="top" id="bodyCell" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin: 0;padding: 0;border-top: 0;height: 100% !important;width: 100% !important;">
+                  <!-- BEGIN TEMPLATE // -->
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                     <tr>
+                        <td align="center" valign="top" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                           <!-- BEGIN PREHEADER // -->
+                           <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templatePreheader" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #3399cc;border-top: 0;border-bottom: 0;">
+                              <tbody style="display: table; width: 100%;">
+                                 <tr>
+                                    <td align="center" valign="top" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                       <table border="0" cellpadding="0" cellspacing="0" width="600" class="templateContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                          <tr>
+                                             <td valign="top" class="preheaderContainer" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                   <tbody class="mcnTextBlockOuter">
+                                                      <tr>
+                                                         <td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                            <!--[if mso]>
+                                                            <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+                                                               <tr>
+                                                                  <![endif]--> <!--[if mso]>
+                                                                  <td valign="top" width="390" style="width:390px;">
+                                                                     <![endif]-->
+                                                                     <table align="left" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+                                                                        <tbody>
+                                                                           <tr>
+                                                                              <td width="70%" valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #EEEEEE;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size: 12px;line-height: 125%;text-align: left;"> #421 – MAY 19, 2020 </td>
+                                                                              <td width="30%" valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #FFFFFF;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size: 12px;line-height: 125%;text-align: right;"> <a href="https://pycoders.com/issues/421" target="_blank" style="word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #EEEEEE;font-weight: normal;text-decoration: underline;">VIEW IN BROWSER</a> </td>
+                                                                           </tr>
+                                                                        </tbody>
+                                                                     </table>
+                                                                     <!--[if mso]>
+                                                                  </td>
+                                                                  <![endif]--> <!--[if mso]>
+                                                               </tr>
+                                                            </table>
+                                                            <![endif]-->
+                                                         </td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </table>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                           <!-- // END PREHEADER -->
+                        </td>
+                     </tr>
+                     <tr>
+                        <td align="center" valign="top" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                           <!-- BEGIN HEADER // -->
+                           <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateHeader" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;border-top: 0;border-bottom: 0;">
+                              <tr>
+                                 <td align="center" valign="top" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                    <table border="0" cellpadding="0" cellspacing="0" width="600" class="templateContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                       <tr>
+                                          <td valign="top" class="headerContainer" style="padding-top: 10px;padding-bottom: 10px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                             <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnImageBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                <tbody class="mcnImageBlockOuter">
+                                                   <tr>
+                                                      <td valign="top" style="padding: 9px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnImageBlockInner">
+                                                         <table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                            <tbody>
+                                                               <tr>
+                                                                  <td class="mcnImageContent" valign="top" style="padding-right: 9px;padding-left: 9px;padding-top: 0;padding-bottom: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"> <a href="https://pycoders.com"><img alt="The PyCoder&rsquo;s Weekly Logo" src="https://cdn.pycoders.com/37bdf31dc645f968ffb90196e5d38ff5" style="max-width: 100%;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage"></a> </td>
+                                                               </tr>
+                                                            </tbody>
+                                                         </table>
+                                                      </td>
+                                                   </tr>
+                                                </tbody>
+                                             </table>
+                                          </td>
+                                       </tr>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </table>
+                           <!-- // END HEADER -->
+                        </td>
+                     </tr>
+                     <tr>
+                        <td align="center" valign="top" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                           <!-- BEGIN BODY // -->
+                           <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateBody" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;border-top: 0;border-bottom: 0;">
+                              <tr>
+                                 <td align="center" valign="top" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                    <table border="0" cellpadding="0" cellspacing="0" width="600" class="templateContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                       <tr>
+                                          <td valign="top" class="bodyContainer" style="padding-top: 10px;padding-bottom: 10px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                             <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                <tbody class="mcnTextBlockOuter">
+                                                   <tr>
+                                                      <td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                         <!--[if mso]>
+                                                         <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+                                                            <tr>
+                                                               <![endif]--> <!--[if mso]>
+                                                               <td valign="top" width="600" style="width:600px;">
+                                                                  <![endif]-->
+                                                                  <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+                                                                     <tbody>
+                                                                        <tr>
+                                                                           <td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #555;font-family: Helvetica;font-size: 15px;line-height: 150%;text-align: left;">
+                                                                              <span style="color: #3399CC;font-family: georgia,serif;font-size: 20px;font-weight: normal;line-height: 1.2;text-decoration: none;"><a href="https://pycoders.com/link/4139/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">Python vs JavaScript for Pythonistas</a></span><br> <span style="font-family:georgia,serif; font-size:16px; line-height:1.2">Python and JavaScript are two of the most popular programming languages in the world. In this tutorial, you&rsquo;ll take a deep dive into the JavaScript ecosystem by comparing Python vs JavaScript. You&rsquo;ll learn the jargon, language history, and best practices from a Pythonista&rsquo;s perspective.</span><br> <span style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size:0.8em;text-transform:normal;"><a href="https://pycoders.com/link/4139/owxn4paaox" style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">REAL PYTHON</a></span> <br><br> <span style="color: #3399CC;font-family: georgia,serif;font-size: 20px;font-weight: normal;line-height: 1.2;text-decoration: none;"><a href="https://pycoders.com/link/4154/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">Python Developers Survey 2019 Results</a></span><br> <span style="font-family:georgia,serif; font-size:16px; line-height:1.2">The results of the 2019 Python Developers Survey, a joint effort from JetBrains and the Python Software Foundation, have been released. Some interesting takeaways: Flask continues to grow as the most popular web framework, about half of Python developers report using <code>pytest</code> for testing, and VS Code continues to grow rapidly in popularity with almost 1/4 Python developers using it as their main editor. Check it out!</span><br> <span style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size:0.8em;text-transform:normal;"><a href="https://pycoders.com/link/4154/owxn4paaox" style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">JETBRAINS.COM</a></span> <br><br> <span style="color: #3399CC;font-family: georgia,serif;font-size: 20px;font-weight: normal;line-height: 1.2;text-decoration: none;"><a href="https://pycoders.com/link/4133/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">Python Developers Are in Demand on Vettery</a></span><br> <a href="https://pycoders.com/link/4133/owxn4paaox" target="_blank"><img style="float:right; margin-left: 16px; margin-top: 7px; width: 17%;" src="https://cdn.pycoders.com/f02006a26f974bfa5ed1a26e39dd2eae" alt></a> <span style="font-family:georgia,serif; font-size:16px; line-height:1.2">Vettery is an online hiring marketplace that&rsquo;s changing the way people hire and get hired. Ready for a bold career move? Make a free profile, name your salary, <a href="https://pycoders.com/link/4133/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">and connect with hiring managers from top employers today →</a></span><br> <span style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size:0.8em;text-transform:normal;"><a href="https://pycoders.com/link/4133/owxn4paaox" style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">VETTERY</a></span><span style="color: #AAAAAA;text-transform:uppercase;padding:1px 4px;border:1px solid #dddddd;margin-left:4px;font-size:0.8em;border-radius:2px;background-color:#ffffe0;">sponsor</span> <br><br> <span style="color: #3399CC;font-family: georgia,serif;font-size: 20px;font-weight: normal;line-height: 1.2;text-decoration: none;"><a href="https://pycoders.com/link/4143/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">Finding Secrets by Decompiling Python Bytecode in Public Repositories</a></span><br> <span style="font-family:georgia,serif; font-size:16px; line-height:1.2">If you commit <code>.pyc</code> files to GitHub, or other public source control repositories, then all of your application secrets, such as AWS credentials and database passwords, can be reconstructed from the bytecode contained in these files.</span><br> <span style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size:0.8em;text-transform:normal;"><a href="https://pycoders.com/link/4143/owxn4paaox" style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">JESSE LI</a></span> <br><br> <span style="color: #3399CC;font-family: georgia,serif;font-size: 20px;font-weight: normal;line-height: 1.2;text-decoration: none;"><a href="https://pycoders.com/link/4140/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">Python Caches Integers</a></span><br> <span style="font-family:georgia,serif; font-size:16px; line-height:1.2">Did you know that Python caches integers between -5 and 256? That is, these integer values are singletons, which means that any reference to one of them in your code references the same object in memory. Learn why Python does this and more in this short, but informative, article.</span><br> <span style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size:0.8em;text-transform:normal;"><a href="https://pycoders.com/link/4140/owxn4paaox" style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">ARPIT BHAYANI</a></span> <br><br> <span style="color: #3399CC;font-family: georgia,serif;font-size: 20px;font-weight: normal;line-height: 1.2;text-decoration: none;"><a href="https://pycoders.com/link/4153/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">Optimizing Django ORM Queries</a></span><br> <span style="font-family:georgia,serif; font-size:16px; line-height:1.2">The Django ORM is powerful, but also abstract. It can give the illusion that operations are inexpensive. Learn how the ORM works under the hood and how you can optimize Django ORM queries to improve the performance of your web apps.</span><br> <span style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size:0.8em;text-transform:normal;"><a href="https://pycoders.com/link/4153/owxn4paaox" style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">ROCIO ARAMBERRI</a></span> <br><br> <span style="color: #3399CC;font-family: georgia,serif;font-size: 20px;font-weight: normal;line-height: 1.2;text-decoration: none;"><a href="https://pycoders.com/link/4157/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">Call for Volunteers! Python GitHub Migration Work Group</a></span><br> <span style="font-family:georgia,serif; font-size:16px; line-height:1.2">The PSF is looking for volunteers to participate in a workgroup that will be involved with Python’s migration from bugs.python.org to GitHub.</span><br> <span style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size:0.8em;text-transform:normal;"><a href="https://pycoders.com/link/4157/owxn4paaox" style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">PYTHON SOFTWARE FOUNDATION</a></span> <br><br> <span style="color: #3399CC;font-family: georgia,serif;font-size: 20px;font-weight: normal;line-height: 1.2;text-decoration: none;"><a href="https://pycoders.com/link/4164/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">Python 3.9.0b1 Is Now Available for Testing</a></span><br> <span style="font-family:georgia,serif; font-size:16px; line-height:1.2">&ldquo;Python 3.9 is still in development. This release, 3.9.0b1, is the first of four planned beta release previews. Beta release previews are intended to give the wider community the opportunity to test new features and bug fixes and to prepare their projects to support the new feature release.&rdquo;</span><br> <span style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size:0.8em;text-transform:normal;"><a href="https://pycoders.com/link/4164/owxn4paaox" style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">CPYTHON DEV BLOG</a></span> <br><br> <span style="color: #3399CC;font-family: georgia,serif;font-size: 20px;font-weight: normal;line-height: 1.2;text-decoration: none;"><a href="https://pycoders.com/link/4174/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">Django 3.1 Alpha 1 Released</a></span><br> <span style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size:0.8em;text-transform:normal;"><a href="https://pycoders.com/link/4174/owxn4paaox" style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">DJANGO SOFTWARE FOUNDATION</a></span> <br><br> <span style="color: #3399CC;font-family: georgia,serif;font-size: 20px;font-weight: normal;line-height: 1.2;text-decoration: none;"><a href="https://pycoders.com/link/4141/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">Python 3.8.3 Is Now Available</a></span><br> <span style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size:0.8em;text-transform:normal;"><a href="https://pycoders.com/link/4141/owxn4paaox" style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">CPYTHON DEV BLOG</a></span> <br><br> <br>
+                                                                              <h2 style="margin: 0;padding: 0;display: block;font-family: Helvetica;font-size: 26px;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: -.5px;text-align: left;color: #707a87 !important; border-bottom: 3px solid #e5e8ea;">Discussions</h2>
+                                                                              <br> <span style="color: #3399CC;font-family: georgia,serif;font-size: 20px;font-weight: normal;line-height: 1.2;text-decoration: none;"><a href="https://pycoders.com/link/4165/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">Whats Is Your Decision Process Between CSV, JSON, XML, and SQL/NoSQL Database?</a></span><br> <span style="font-family:georgia,serif; font-size:16px; line-height:1.2">With so many formats for storing structured data, how do you choose which one to use?</span><br> <span style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size:0.8em;text-transform:normal;"><a href="https://pycoders.com/link/4165/owxn4paaox" style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">REDDIT</a></span> <br><br> <span style="color: #3399CC;font-family: georgia,serif;font-size: 20px;font-weight: normal;line-height: 1.2;text-decoration: none;"><a href="https://pycoders.com/link/4152/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">Why Do These Two Functions Have Different Output?</a></span><br> <span style="font-family:georgia,serif; font-size:16px; line-height:1.2">How well do you know how generator expressions and for loops work?</span><br> <span style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size:0.8em;text-transform:normal;"><a href="https://pycoders.com/link/4152/owxn4paaox" style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">REDDIT</a></span> <br><br> <span style="color: #3399CC;font-family: georgia,serif;font-size: 20px;font-weight: normal;line-height: 1.2;text-decoration: none;"><a href="https://pycoders.com/link/4150/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">Do You Use Walrus Operator := in Your Projects?</a></span><br> <span style="font-family:georgia,serif; font-size:16px; line-height:1.2">Do you walrus, coo coo ca choo?</span><br> <span style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size:0.8em;text-transform:normal;"><a href="https://pycoders.com/link/4150/owxn4paaox" style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">REDDIT</a></span> <br><br> <br>
+                                                                              <h2 style="margin: 0;padding: 0;display: block;font-family: Helvetica;font-size: 26px;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: -.5px;text-align: left;color: #707a87 !important; border-bottom: 3px solid #e5e8ea;">Python Jobs</h2>
+                                                                              <br> <span style="color: #3399CC;font-family: georgia,serif;font-size: 20px;font-weight: normal;line-height: 1.2;text-decoration: none;"><a href="https://pycoders.com/link/4163/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">Senior Python Engineer (Remote)</a></span><br> <a href="https://pycoders.com/link/4163/owxn4paaox" style="font-weight: normal;color: #AAAAAA;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size:0.8em;background-color:#ffffe0; " target="_blank">GORGIAS</a><br> <br> <span style="color: #3399CC;font-family: georgia,serif;font-size: 20px;font-weight: normal;line-height: 1.2;text-decoration: none;"><a href="https://pycoders.com/link/4149/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">Senior Python Engineer (Remote, US East Coast Only)</a></span><br> <a href="https://pycoders.com/link/4149/owxn4paaox" style="font-weight: normal;color: #AAAAAA;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size:0.8em;background-color:#ffffe0; " target="_blank">ENTERRA SOLUTIONS</a><br> <br> <span style="color: #3399CC;font-family: georgia,serif;font-size: 20px;font-weight: normal;line-height: 1.2;text-decoration: none;"><a href="https://pycoders.com/link/4168/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">Fullstack Software Engineer (Remote)</a></span><br> <a href="https://pycoders.com/link/4168/owxn4paaox" style="font-weight: normal;color: #AAAAAA;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size:0.8em;" target="_blank">CYBERCODERS</a><br> <br> <span style="color: #3399CC;font-family: georgia,serif;font-size: 20px;font-weight: normal;line-height: 1.2;text-decoration: none;"><a href="https://pycoders.com/link/4170/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">Sr Python Developer Django, Flask, DevOps (Remote)</a></span><br> <a href="https://pycoders.com/link/4170/owxn4paaox" style="font-weight: normal;color: #AAAAAA;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size:0.8em;" target="_blank">CYBERCODERS</a><br> <br> <a href="https://www.pythonjobshq.com?utm_source=newsletter&amp;utm_campaign=pycoders421&amp;utm_medium=email" style="color: #3399CC;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal;" target="_blank"><span style="font-family:georgia,serif; font-size:20px; line-height:1.2">More Python Jobs &gt;&gt;&gt;</span></a><br><br> <br>
+                                                                              <h2 style="margin: 0;padding: 0;display: block;font-family: Helvetica;font-size: 26px;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: -.5px;text-align: left;color: #707a87 !important; border-bottom: 3px solid #e5e8ea;">Articles &amp; Tutorials</h2>
+                                                                              <br> <span style="color: #3399CC;font-family: georgia,serif;font-size: 20px;font-weight: normal;line-height: 1.2;text-decoration: none;"><a href="https://pycoders.com/link/4138/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">How to Deprecate a PyPI Package</a></span><br> <span style="font-family:georgia,serif; font-size:16px; line-height:1.2">How do you deprecate a Python package that you&rsquo;ve published to PyPI and want people to stop using? Should you just delete? Check out this guide to several ways to accomplish this task. You can also try the new <a href="https://pycoders.com/link/4158/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">yank</a> feature supported by PyPI.</span><br> <span style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size:0.8em;text-transform:normal;"><a href="https://pycoders.com/link/4138/owxn4paaox" style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">PAUL MCCANN</a></span> <br><br> <span style="color: #3399CC;font-family: georgia,serif;font-size: 20px;font-weight: normal;line-height: 1.2;text-decoration: none;"><a href="https://pycoders.com/link/4172/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">Subinterpreters for Python</a></span><br> <span style="font-family:georgia,serif; font-size:16px; line-height:1.2">PEP 554 exposes Python&rsquo;s existing subinterpreter support so that Python programs can use multiple separate interpreters. The PEP was created in 2017, and the author Eric Snow thinks it&rsquo;s time to finally accept or reject the proposal.</span><br> <span style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size:0.8em;text-transform:normal;"><a href="https://pycoders.com/link/4172/owxn4paaox" style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">JAKE EDGE</a></span> <br><br> <span style="color: #3399CC;font-family: georgia,serif;font-size: 20px;font-weight: normal;line-height: 1.2;text-decoration: none;"><a href="https://pycoders.com/link/4134/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">Track the Performance of Your Python Applications in Real Time With Datadog</a></span><br> <span style="font-family:georgia,serif; font-size:16px; line-height:1.2">Monitor metrics, logs, and traces from your Python applications with Datadog APM—our tracing client auto-instruments Django, Redis, and other frameworks and libraries so you can get insights right away. <a href="https://pycoders.com/link/4134/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">Try it for yourself with a free, 14-day trial. →</a></span><br> <span style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size:0.8em;text-transform:normal;"><a href="https://pycoders.com/link/4134/owxn4paaox" style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">DATADOG</a></span><span style="color: #AAAAAA;text-transform:uppercase;padding:1px 4px;border:1px solid #dddddd;margin-left:4px;font-size:0.8em;border-radius:2px;background-color:#ffffe0;">sponsor</span> <br><br> <span style="color: #3399CC;font-family: georgia,serif;font-size: 20px;font-weight: normal;line-height: 1.2;text-decoration: none;"><a href="https://pycoders.com/link/4169/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">Lessons From Adopting Python as a Team</a></span><br> <span style="font-family:georgia,serif; font-size:16px; line-height:1.2">How do you go about rewriting legacy ETL jobs in Python when you&rsquo;re not Python developers?</span><br> <span style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size:0.8em;text-transform:normal;"><a href="https://pycoders.com/link/4169/owxn4paaox" style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">AKSHAY PRABHU</a></span> <br><br> <span style="color: #3399CC;font-family: georgia,serif;font-size: 20px;font-weight: normal;line-height: 1.2;text-decoration: none;"><a href="https://pycoders.com/link/4167/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">Leveling Up Your Python Literacy and Finding Python Projects to Study</a></span><br> <span style="font-family:georgia,serif; font-size:16px; line-height:1.2">In your quest to become a better developer, how do you find Python code that is at your reading level? What are good code bases or projects to study? What are the things holding you back from leveling up your Python literacy? This week we have Cecil Phillip on the show to discuss all of these common questions. Cecil is a Senior Cloud Advocate at Microsoft.</span><br> <span style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size:0.8em;text-transform:normal;"><a href="https://pycoders.com/link/4167/owxn4paaox" style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">REAL PYTHON</a></span> <span style="color: #AAAAAA;text-transform:uppercase;padding:1px 4px;border:1px solid #dddddd;margin-left:4px;font-size:0.8em;border-radius:2px;">podcast</span> <br><br> <span style="color: #3399CC;font-family: georgia,serif;font-size: 20px;font-weight: normal;line-height: 1.2;text-decoration: none;"><a href="https://pycoders.com/link/4135/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">What is Python Redis? Enhance Python With Redis &ndash; the Fastest In-Memory Cloud Database</a></span><br> <span style="font-family:georgia,serif; font-size:16px; line-height:1.2">Install redis-py &amp; Python Redis Client. Explore how Redis can enhance Python capabilities. Learn how to use Connection Pooling, SSL, Reading &amp; Writing, &amp; Opening a Connection with redis-py.</span><br> <span style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size:0.8em;text-transform:normal;"><a href="https://pycoders.com/link/4135/owxn4paaox" style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">REDIS LABS</a></span><span style="color: #AAAAAA;text-transform:uppercase;padding:1px 4px;border:1px solid #dddddd;margin-left:4px;font-size:0.8em;border-radius:2px;background-color:#ffffe0;">sponsor</span> <br><br> <span style="color: #3399CC;font-family: georgia,serif;font-size: 20px;font-weight: normal;line-height: 1.2;text-decoration: none;"><a href="https://pycoders.com/link/4173/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">Implementing gRPC Server Using Python</a></span><br> <span style="font-family:georgia,serif; font-size:16px; line-height:1.2">Your next API doesn’t need to be built with REST and JSON. How about gRPC and Protocol Buffers for better performance and structure?</span><br> <span style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size:0.8em;text-transform:normal;"><a href="https://pycoders.com/link/4173/owxn4paaox" style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">TOWARDSDATASCIENCE.COM</a> • Shared by <a href="https://pycoders.com/link/4142/owxn4paaox" style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">Martin Heinz</a></span> <br><br> <span style="color: #3399CC;font-family: georgia,serif;font-size: 20px;font-weight: normal;line-height: 1.2;text-decoration: none;"><a href="https://pycoders.com/link/4155/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">Build a Markdown to HTML Conversion Pipeline Using Python</a></span><br> <span style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size:0.8em;text-transform:normal;"><a href="https://pycoders.com/link/4155/owxn4paaox" style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">FLORIAN DAHLITZ</a> • Shared by <a href="https://pycoders.com/link/4144/owxn4paaox" style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">Florian Dahlitz</a></span> <br><br> <span style="color: #3399CC;font-family: georgia,serif;font-size: 20px;font-weight: normal;line-height: 1.2;text-decoration: none;"><a href="https://pycoders.com/link/4160/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">Untangling Python Decorators</a></span><br> <span style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size:0.8em;text-transform:normal;"><a href="https://pycoders.com/link/4160/owxn4paaox" style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">REDOWAN DELOWAR</a> • Shared by <a href="https://pycoders.com/link/4161/owxn4paaox" style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">Redowan Delowar</a></span> <br><br> <span style="color: #3399CC;font-family: georgia,serif;font-size: 20px;font-weight: normal;line-height: 1.2;text-decoration: none;"><a href="https://pycoders.com/link/4137/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">Data Elixir: Data Science Newsletter</a></span><br> <span style="font-family:georgia,serif; font-size:16px; line-height:1.2">Data Elixir is an email newsletter that keeps you on top of the tools and trends in Data Science. Curated weekly with top picks from around the web.</span><br> <span style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size:0.8em;text-transform:normal;"><a href="https://pycoders.com/link/4137/owxn4paaox" style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">DATAELIXIR.COM</a></span> <br><br> <br>
+                                                                              <h2 style="margin: 0;padding: 0;display: block;font-family: Helvetica;font-size: 26px;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: -.5px;text-align: left;color: #707a87 !important; border-bottom: 3px solid #e5e8ea;">Projects &amp; Code</h2>
+                                                                              <br> <span style="color: #3399CC;font-family: georgia,serif;font-size: 20px;font-weight: normal;line-height: 1.2;text-decoration: none;"><a href="https://pycoders.com/link/4136/owxn4paaox" style="font-family: Helvetica; color: #707a87;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">Brought to you by <strong>Real Python for Teams</strong></a></span><span style="color: #AAAAAA;text-transform:uppercase;padding:1px 4px;border:1px solid #dddddd;margin-left:4px;font-size:0.8em;border-radius:2px;background-color:#ffffe0;">sponsor</span> <br> <span style="font-family:Helvetica; font-size:16px; line-height:1.2">Online Python training created by a community of experts. Give your team the <a href="https://pycoders.com/link/4136/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">real-world Python skills they need to succeed →</a></span><br> <br> <span style="color: #3399CC;font-family: georgia,serif;font-size: 20px;font-weight: normal;line-height: 1.2;text-decoration: none;"><a href="https://pycoders.com/link/4145/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">azure-sdk-for-python: The Azure SDK for Python</a></span><br> <span style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size:0.8em;text-transform:normal;"><a href="https://pycoders.com/link/4145/owxn4paaox" style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">GITHUB.COM/AZURE</a></span> <br><br> <span style="color: #3399CC;font-family: georgia,serif;font-size: 20px;font-weight: normal;line-height: 1.2;text-decoration: none;"><a href="https://pycoders.com/link/4147/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">py-spy: Sampling Profiler for Python Programs</a></span><br> <span style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size:0.8em;text-transform:normal;"><a href="https://pycoders.com/link/4147/owxn4paaox" style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">GITHUB.COM/BENFRED</a></span> <br><br> <span style="color: #3399CC;font-family: georgia,serif;font-size: 20px;font-weight: normal;line-height: 1.2;text-decoration: none;"><a href="https://pycoders.com/link/4148/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">kneed: Knee Point Detection in Python</a></span><br> <span style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size:0.8em;text-transform:normal;"><a href="https://pycoders.com/link/4148/owxn4paaox" style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">GITHUB.COM/ARVKEVI</a></span> <br><br> <span style="color: #3399CC;font-family: georgia,serif;font-size: 20px;font-weight: normal;line-height: 1.2;text-decoration: none;"><a href="https://pycoders.com/link/4159/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">detectron2: FAIR&rsquo;s Next-Generation Platform for Object Detection and Segmentation</a></span><br> <span style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size:0.8em;text-transform:normal;"><a href="https://pycoders.com/link/4159/owxn4paaox" style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">GITHUB.COM/FACEBOOKRESEARCH</a></span> <br><br> <span style="color: #3399CC;font-family: georgia,serif;font-size: 20px;font-weight: normal;line-height: 1.2;text-decoration: none;"><a href="https://pycoders.com/link/4151/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">zipfly: Write Large ZIP Archives Without Memory Inflation</a></span><br> <span style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size:0.8em;text-transform:normal;"><a href="https://pycoders.com/link/4151/owxn4paaox" style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">GITHUB.COM/BUZONIO</a></span> <br><br> <span style="color: #3399CC;font-family: georgia,serif;font-size: 20px;font-weight: normal;line-height: 1.2;text-decoration: none;"><a href="https://pycoders.com/link/4171/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">macropy: Macros in Python: Quasiquotes, Case Classes, LINQ and More!</a></span><br> <span style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size:0.8em;text-transform:normal;"><a href="https://pycoders.com/link/4171/owxn4paaox" style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">GITHUB.COM/LIHAOYI</a></span> <br><br> <span style="color: #3399CC;font-family: georgia,serif;font-size: 20px;font-weight: normal;line-height: 1.2;text-decoration: none;"><a href="https://pycoders.com/link/4162/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">py-pdf-parser: A New Tool for Extracting Information From PDFs</a></span><br> <span style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size:0.8em;text-transform:normal;"><a href="https://pycoders.com/link/4162/owxn4paaox" style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">GITHUB.COM/JSTOCKWIN</a> • Shared by Jake Stockwin</span> <br><br> <span style="color: #3399CC;font-family: georgia,serif;font-size: 20px;font-weight: normal;line-height: 1.2;text-decoration: none;"><a href="https://pycoders.com/link/4166/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">Little Ball of Fur: A NetworkX Extension Library for Graph Sampling</a></span><br> <span style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size:0.8em;text-transform:normal;"><a href="https://pycoders.com/link/4166/owxn4paaox" style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">GITHUB.COM/BENEDEKROZEMBERCZKI</a> • Shared by <a href="https://pycoders.com/link/4156/owxn4paaox" style="color: #AAAAAA;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">Benedek Rozemberczki</a></span> <br><br>
+                                                                              <div style="background: #ffffde; padding: 1em;">
+                                                                                 <h2 style="margin: 0;padding: 0;display: block;font-family: Helvetica;font-size: 18px;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: -.5px;text-align: left;color: #707a87 !important; border-bottom: 3px solid #e5e8ea;">📆🐍 Upcoming Python Events</h2>
+                                                                                 <br> <span style="color: #3399CC;font-family: georgia,serif;font-size: 20px;font-weight: normal;line-height: 1.2;text-decoration: none;"><a href="https://pycoders.com/link/4146/owxn4paaox" style="color: #3399CC;font-weight: normal;text-decoration: none;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" target="_blank">⋅ Python Web Conf 2020 (Remote)</a></span><span style="font-family:georgia,serif; font-size:16px; line-height:1.2"> June 17–19, 2020</span><br>
+                                                                              </div>
+                                                                           </td>
+                                                                        </tr>
+                                                                     </tbody>
+                                                                  </table>
+                                                                  <!--[if mso]>
+                                                               </td>
+                                                               <![endif]--> <!--[if mso]>
+                                                            </tr>
+                                                         </table>
+                                                         <![endif]-->
+                                                      </td>
+                                                   </tr>
+                                                </tbody>
+                                             </table>
+                                          </td>
+                                       </tr>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </table>
+                        </td>
+                     </tr>
+                  </table>
+                  <!-- // END BODY -->
+               </td>
+            </tr>
+            <tr>
+               <td align="center" valign="top" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                  <!-- BEGIN FOOTER // -->
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateFooter" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #e5e8ea;border-top: 0;border-bottom: 0;">
+                     <tr>
+                        <td align="center" valign="top" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                           <table border="0" cellpadding="0" cellspacing="0" width="600" class="templateContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                              <tr>
+                                 <td valign="top" class="footerContainer" style="padding-top: 10px;padding-bottom: 10px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                       <tbody class="mcnTextBlockOuter">
+                                          <tr>
+                                             <td valign="top" class="mcnTextBlockInner" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                <table align="left" border="0" cellpadding="0" cellspacing="0" width="600" class="mcnTextContentContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td valign="top" class="mcnTextContent" style="padding-top: 9px;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #555;font-family: Helvetica;font-size: 11px;line-height: 125%;text-align: left;"> Happy Pythoning!<br> <em>Copyright © 2020 PyCoder&rsquo;s Weekly, All rights reserved.</em><br> You are receiving this email because you opted in on our website at <a href="https://pycoders.com" style="text-decoration:none;color:#555">pycoders.com</a><br> Our mailing address: <a href="https://pycoders.com" style="text-decoration:none;color:#555">DevCademy Media Inc. · #720-999 West Broadway, Vancouver BC V5Z 1K5, Canada</a><br> <br> <a class="utilityLink" href="https://pycoders.com/subscriptions/owxn4paaox/cancel" style="word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #555;font-weight: normal;text-decoration: underline;">Unsubscribe</a>&nbsp;|&nbsp;<a class="utilityLink" href="https://pycoders.com/subscriptions/owxn4paaox/edit" style="word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #555;font-weight: normal;text-decoration: underline;">Update Email Address</a><br> </td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </table>
+                        </td>
+                     </tr>
+                  </table>
+                  <!-- // END FOOTER -->
+               </td>
+            </tr>
+         </table>
+         <!-- // END TEMPLATE -->
+      </center>
+      <img src="https://pycoders.com/issues/421/open/owxn4paaox" width="1" height="1" alt>
+   </body>
+</html>
