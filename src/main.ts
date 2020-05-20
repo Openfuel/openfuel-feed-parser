@@ -1,14 +1,22 @@
+// ----------------------------------
 // main.ts
+// ----------------------------------
+
+// import fs for reading and writing tokens
 import * as fs from "fs";
 
+// readline module for reading stdin for token
 import * as readline from "readline";
 
+// import main parser handler
 import Parse from "./parser";
 
+// import google api producer
 import { google } from "googleapis";
 
 // If modifying these scopes, delete token.json.
 const SCOPES: string[] = ["https://www.googleapis.com/auth/gmail.readonly"];
+
 // The file token.json stores the user's access and refresh tokens, and is
 // created automatically when the authorization flow completes for the first
 // time.
@@ -16,6 +24,8 @@ const TOKEN_PATH: string = "token.json";
 
 // Load client secrets from a local file.
 import * as creds from "./credentials.json";
+
+// authorize client with valid credentials.
 authorize(creds, getRecentEmail);
 
 /**
@@ -25,7 +35,10 @@ authorize(creds, getRecentEmail);
  * @param {function} callback The callback to call with the authorized client.
  */
 function authorize(credentials: any, callback: any) {
+  // get client secret, id, etc from provided credentials.
   const { client_secret, client_id, redirect_uris } = credentials.installed;
+
+  // create new OAuth instance.
   const oAuth2Client = new google.auth.OAuth2(
     client_id,
     client_secret,
@@ -34,8 +47,11 @@ function authorize(credentials: any, callback: any) {
 
   // Check if we have previously stored a token.
   fs.readFile(TOKEN_PATH, (err: any, token: any) => {
+    // if file not found, asks for new token.
     if (err) return getNewToken(oAuth2Client, callback);
+    // sets credentials for googleapis requests.
     oAuth2Client.setCredentials(JSON.parse(token));
+    // triggers callback.
     callback(oAuth2Client);
   });
 }
