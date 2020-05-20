@@ -14,7 +14,7 @@
 const selectors = {
   // the content div is the parent element for every article.
   // @selector: class
-  CONTENT_DIV: ".mcnTextContent",
+  TITLE_SPAN: "span a",
 
 }
 
@@ -26,5 +26,7 @@ const selectors = {
 **/
 export default function parser($: any) {
   // TODO: Add parsing logic
-  console.log($(selectors.CONTENT_DIV));
+  for (let i = 0; i < $(selectors.TITLE_SPAN).length; i++) {
+    console.log($(selectors.TITLE_SPAN)[i].children[0].data);
+  }
 }

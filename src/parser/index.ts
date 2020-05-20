@@ -3,8 +3,8 @@
 // ----------------------------------
 
 /**
-* Parser for Newsletters
-**/
+ * Parser for Newsletters
+ **/
 
 // The Python Weekly newsletter parser.
 import PyWeekly from "./pythonWeekly";
@@ -16,7 +16,7 @@ import * as cheerio from "cheerio";
 // since an object key can be any of those types, our key can too
 // in TS 3.0+, putting just "string" raises an error
 function hasKey<O>(obj: O, key: keyof any): key is keyof O {
-  return key in obj
+  return key in obj;
 }
 
 // collection of parser with their incoming email.
@@ -25,12 +25,12 @@ const Parsers = {
 };
 
 /**
-* Distributes cheerio instances to parsers.
-* @type function
-* @param {string} email - Email ID of the newsletter
-* @param {any} responseData - Base64 string of data containing HTML
-* @private false
-**/
+ * Distributes cheerio instances to parsers.
+ * @type function
+ * @param {string} email - Email ID of the newsletter
+ * @param {any} responseData - Base64 string of data containing HTML
+ * @private false
+ **/
 export default function Parse(email: string, responseData: any) {
   // create new Buffer from base64 string.
   var buff = new Buffer(responseData, "base64");
@@ -39,6 +39,7 @@ export default function Parse(email: string, responseData: any) {
   // create new cheerio instance.
   const $ = cheerio.load(html);
   // type check for obj key existence
+  console.log(email)
   if (hasKey(Parsers, email)) {
     // handle over the cheerio instance to the particular newsletter parser.
     Parsers[email]($);

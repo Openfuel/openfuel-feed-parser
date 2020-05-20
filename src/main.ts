@@ -121,7 +121,7 @@ function getRecentEmail(auth: any) {
   const gmail = google.gmail({ version: "v1", auth });
   // Only get the recent email - 'maxResults' parameter
   gmail.users.messages.list(
-    { auth: auth, userId: "me", labelIds: ["CATEGORY_FORUMS"], maxResults: 4 },
+    { auth: auth, userId: "me", labelIds: ["CATEGORY_FORUMS"], maxResults: 10 },
     function (err: any, response: any) {
       if (err) {
         console.log("The API returned an error: " + err);
@@ -129,29 +129,30 @@ function getRecentEmail(auth: any) {
       }
 
       // Get the message id which we will need to retreive tha actual message next.
-      var message_id = response["data"]["messages"][0]["id"];
-
-      // Retreive the actual message using the message id
-      gmail.users.messages.get(
-        { auth: auth, userId: "me", id: message_id },
-        function (err: any, response: any) {
-          if (err) {
-            console.log("The API returned an error: " + err);
-            return;
-          }
-          const regex = /(?:"?([^"]*)"?\s)?(?:<?(.+@[^>]+)>?)/;
-          // console.log(response["data"]["payload"]["headers"]);
-          response["data"]["payload"]["headers"].forEach((a: any, b: any) => {
-            if (a["name"] == "From") {
-              // parts[0] contains text/plain data and parts[1] contains text/html data
-              Parse(
-                regex.exec(a["value"])[2],
-                response.data.payload.parts[1].body.data
-              );
+      for (let i = 0; i < response["data"]["messages"].length; i++) {
+        var message_id = response["data"]["messages"][i]["id"];
+        // Retreive the actual message using the message id
+        gmail.users.messages.get(
+          { auth: auth, userId: "me", id: message_id },
+          function (err: any, response: any) {
+            if (err) {
+              console.log("The API returned an error: " + err);
+              return;
             }
-          });
-        }
-      );
+            const regex = /(?:"?([^"]*)"?\s)?(?:<?(.+@[^>]+)>?)/;
+            console.log(`Payload length: ${response["data"]["payload"]["headers"].length}`);
+            response["data"]["payload"]["headers"].forEach((a: any, b: any) => {
+              if (a["name"] == "From") {
+                // parts[0] contains text/plain data and parts[1] contains text/html data
+                Parse(
+                  regex.exec(a["value"])[2],
+                  response.data.payload.parts[1].body.data
+                );
+              }
+            });
+          }
+        );
+      }
     }
   );
 }
