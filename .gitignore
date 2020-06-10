@@ -2,3 +2,6 @@ node_modules
 dist
 src/credentials.json
 token.json
+
+# other junk
+src/parser/*.html
