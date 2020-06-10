@@ -16,4 +16,5 @@ const converter = new Turndown();
 export default function generalParser($: string) {
   let md = converter.turndown($);
   console.log(md);
+  console.log("=============")
 };
