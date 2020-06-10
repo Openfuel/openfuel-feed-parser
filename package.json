@@ -25,6 +25,7 @@
   "dependencies": {
     "@types/cheerio": "^0.22.18",
     "cheerio": "^1.0.0-rc.3",
-    "showdown": "^1.9.1"
+    "showdown": "^1.9.1",
+    "turndown": "^6.0.0"
   }
 }

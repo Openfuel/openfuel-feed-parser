@@ -3,10 +3,10 @@
 // ----------------------------------
 
 // import the markdown parser
-import * as showdown from "showdown";
+// @ts-ignore
+import * as Turndown from "turndown";
 
-// create a converter instance
-const converter = new showdown.Converter();
+const converter = new Turndown();
 
 /**
  * Gerenalised parser for newsletters that don't have a dedicated one.
@@ -14,5 +14,6 @@ const converter = new showdown.Converter();
  * @param {string} $ - Thr weird html of the newsletter
  **/
 export default function generalParser($: string) {
-  let basicHTML = converter.makeHTML(converter.makeMd($))
+  let md = converter.turndown($);
+  console.log(md);
 };
