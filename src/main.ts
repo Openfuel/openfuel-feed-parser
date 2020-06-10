@@ -136,7 +136,7 @@ function getRecentEmail(auth: any) {
           { auth: auth, userId: "me", id: message_id },
           function (err: any, response: any) {
             if (err) {
-              console.log("The API returned an error: " + err);
+              console.log("The Messages API returned an error: " + err);
               return;
             }
             const regex = /(?:"?([^"]*)"?\s)?(?:<?(.+@[^>]+)>?)/;

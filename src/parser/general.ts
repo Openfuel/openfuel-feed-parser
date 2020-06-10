@@ -6,6 +6,9 @@
 // @ts-ignore
 import * as Turndown from "turndown";
 
+// @ts-ignore
+import * as mdJson from "md-2-json";
+
 const converter = new Turndown();
 
 /**
@@ -15,6 +18,6 @@ const converter = new Turndown();
  **/
 export default function generalParser($: string) {
   let md = converter.turndown($);
-  console.log(md);
+  console.log(mdJson.parse(md));
   console.log("=============")
 };
