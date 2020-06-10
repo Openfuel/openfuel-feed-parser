@@ -27,6 +27,6 @@ const selectors = {
 export default function parser($: any) {
   // TODO: Add parsing logic
   for (let i = 0; i < $(selectors.TITLE_SPAN).length; i++) {
-    console.log($(selectors.TITLE_SPAN)[i].children[0].data);
+  //  console.log($(selectors.TITLE_SPAN)[i].children[0].data);
   }
 }
