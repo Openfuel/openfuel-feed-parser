@@ -146,8 +146,8 @@ function getRecentEmail(auth: any) {
                 // parts[0] contains text/plain data and parts[1] contains text/html data
                 Parse(
                   regex.exec(a["value"])[2],
-                  response.data.payload.parts[1].body.data,
-                  response.data.payload.parts[0].body.data
+                  response.data.payload.parts[1].body.data, // the html body
+                  response.data.payload.parts[0].body.data // the plain text body
                 );
               }
             });

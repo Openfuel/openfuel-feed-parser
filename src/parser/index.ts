@@ -41,5 +41,5 @@ export default function Parse(email: string, responseData: any, textData: any) {
   // type check for obj key existence
   console.log(email)
   // handle over the cheerio instance to the particular newsletter parser.
-  hasKey(Parsers, email) ?  Parsers[email]($) : GeneralParser(text);
+  hasKey(Parsers, email) ?  Parsers[email]($) : GeneralParser(html);
 }
