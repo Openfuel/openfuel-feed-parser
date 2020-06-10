@@ -14,7 +14,7 @@
 const selectors = {
   // the content div is the parent element for every article.
   // @selector: class
-  TITLE_SPAN: "span a",
+  TITLE_SPAN: "span a", 
 
 }
 
