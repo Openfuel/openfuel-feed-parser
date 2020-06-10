@@ -1,7 +1,7 @@
 {
   "name": "openfuel-feed-parser",
   "version": "1.0.0",
-  "description": "Parses emails from varioud newsletters",
+  "description": "Parses emails from various newsletters",
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
